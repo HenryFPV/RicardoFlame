@@ -91,7 +91,58 @@ class Wall(pg.sprite.Sprite):
         self.rect.y = y
         self.rect.x = x
 
+
+
+def pela():
+
+    #siia tuleb skoor
+    done = False
+
+    while not done:
+
+        for event in pg.event.get():
+
+            if event.type == pg.QUIT:
+                done = True
+
+            elif event.type == pg.KEYDOWN:
+
+                if event.key == pg.K_LEFT:
+                    player.changespeed(-5, 0)
+
+                elif event.key == pg.K_RIGHT:
+                    player.changespeed(5, 0)
+
+                elif event.key == pg.K_UP:
+                    player.changespeed(0, -5)
+
+                elif event.key == pg.K_DOWN:
+                    player.changespeed(0, 5)
+
+                elif event.key == pg.K_SPACE:
+                    #siia helid
+
+            elif event.type == pg.KEYUP:
+
+                if event.key == pg.K_LEFT:
+                    player.changespeed (5, 0)
+
+                elif event.key == pg.K_RIGHT:
+                    player.changespeed(-5, 0)
+
+                elif event.key == pg.K_UP:
+                    player.changespeed(0, 5)
+
+                elif event.key == pg.K_DOWN:
+                    player.changespeed(0, -5)
+
+        all_sprite_list_update()
+
         
+
+
+
+
 
 
 
