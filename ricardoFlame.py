@@ -91,6 +91,8 @@ class Wall(pg.sprite.Sprite):
         self.rect.y = y
         self.rect.x = x
 
+all_sprite_list = pg.sprite.Group()
+#siia lisa sprited nimedega ja gruppi!
 
 
 def pela():
@@ -138,7 +140,14 @@ def pela():
 
         all_sprite_list_update()
 
-        
+        all_sprite_list.draw(screen)
+
+        pg.display.flip()
+
+        clock.tick(60)
+
+
+pg.quit()
 
 
 
