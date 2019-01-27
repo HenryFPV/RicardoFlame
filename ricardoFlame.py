@@ -12,6 +12,8 @@ ladu = pg.image.load("png/keskekraan.png")
 
 backgroundRect = algust.get_rect()
 muusika = pg.mixer.music.load
+peaheli = pg.mixer.Sound('sound\dote.wav')
+
 
 BLACK = (0, 0, 0)
 BLUE = (50, 50, 255)
@@ -136,12 +138,12 @@ def keskmine():
 
         pg.display.update()
 
-        time.sleep(4)
+        time.sleep(1)
 
         muusika('sound\woman mad.wav')
         heli_peale()
 
-        time.sleep(1.2)
+        time.sleep(4)
 
         clock.tick(0)
 
@@ -364,7 +366,7 @@ clock = pg.time.Clock()
 
 def pela():
     skoor = 0
-
+    pg.mixer.Sound.play(peaheli)
     done = False
 
     while not done:
