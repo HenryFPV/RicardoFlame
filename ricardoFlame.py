@@ -55,7 +55,7 @@ def button(msg, x, y, w, h, iv, av, action=None):
                 heli_peale()
                 time.sleep(0.5)
 
-                muusika('sound\exit.mp3')
+                muusika('sound\end.wav')
                 heli_peale()
                 time.sleep(2)
 
@@ -87,7 +87,7 @@ def button(msg, x, y, w, h, iv, av, action=None):
 def intro():
     intro = True
 
-    muusika('sound\soliders.mp3')
+    muusika('sound\intro.wav')
     heli_peale()
 
     while intro:
@@ -138,7 +138,7 @@ def keskmine():
 
         time.sleep(4)
 
-        muusika('sound\starting sound.mp3')
+        muusika('sound\woman mad.wav')
         heli_peale()
 
         time.sleep(1.2)
@@ -173,7 +173,7 @@ def winn():
 def outro():
     outro = True
 
-    muusika('sound\krediit.mp3')
+    muusika('sound\literaldeath.wav')
     heli_peale()
 
     while outro:
@@ -391,7 +391,7 @@ def pela():
 
                 elif event.key == pygame.K_SPACE:
 
-                    muusika('sound\shooot.mp3')
+                    muusika('sound\sara.wav')
                     heli_peale()
 
                     player.shoot()
@@ -414,7 +414,7 @@ def pela():
         pihtas = pygame.sprite.groupcollide(mobs, bullets, True, True)
 
         for piht in pihtas:
-            muusika('sound\sliderbar.wav')
+            muusika('sound\sike.wav')
             heli_peale()
 
             skoor += 1
@@ -427,7 +427,7 @@ def pela():
         kadunud = pg.sprite.spritecollide(player, mobs, False)
 
         if kadunud:
-            muusika('sound\oof.mp3')
+            muusika('sound\died.wav')
             heli_peale()
 
             time.sleep(1.2)
