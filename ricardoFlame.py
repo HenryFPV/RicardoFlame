@@ -8,7 +8,7 @@ pg.display.set_caption('Ricardo Flame')
 algust = pg.image.load("png/avaekraan1.png")
 loppt = pg.image.load("png/endscreen.png")
 ladu = pg.image.load("png/keskekraan.png")
-#voitekr = pg.image.load("png/v6itja.png")
+voitekr = pg.image.load("png/Endscr_win.jpg")
 
 backgroundRect = algust.get_rect()
 muusika = pg.mixer.music.load
@@ -151,7 +151,10 @@ def keskmine():
 ########################################################
 def winn():
     winn = True
-
+    
+    muusika('sound\end.wav')
+    heli_peale
+    
     while winn:
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -174,10 +177,9 @@ def winn():
 
 def outro():
     outro = True
-
     muusika('sound\literaldeath.wav')
     heli_peale()
-
+    
     while outro:
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -366,10 +368,14 @@ clock = pg.time.Clock()
 
 def pela():
     skoor = 0
-    pg.mixer.Sound.play(peaheli)
+#    pg.mixer.Sound.play(peaheli)
     done = False
+    pg.mixer.Sound.play(peaheli)
+    
 
     while not done:
+
+    
 
         for event in pg.event.get():
 
@@ -433,6 +439,7 @@ def pela():
             heli_peale()
 
             time.sleep(1.2)
+            pg.mixer.Sound.stop(peaheli)
             outro()
 
         all_sprite_list.draw(screen)
@@ -442,8 +449,11 @@ def pela():
         pg.display.flip()
 
         clock.tick(60)
-        if str(skoor) == 15:
+        if skoor == 15:
+            pg.mixer.Sound.stop(peaheli)
             winn()
+            
+            
 
 
 #   if str(skoor) == 15:
