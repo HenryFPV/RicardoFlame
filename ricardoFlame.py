@@ -153,7 +153,7 @@ def winn():
     winn = True
     
     muusika('sound\end.wav')
-    heli_peale
+    heli_peale()
     
     while winn:
         for event in pg.event.get():
@@ -300,8 +300,12 @@ class Mob(pg.sprite.Sprite):
         self.image = pg.transform.scale(self.image, [60, 100])
 
         self.rect = self.image.get_rect()
-        self.rect.x = 900
-        self.rect.y = 500
+#        self.rect.x = 900
+#        self.rect.y = 500
+        
+        
+        self.rect.x = random.randrange(899, 1000)
+        self.rect.y = random.randrange(40, 550)        
 
         self.speedx = random.randrange(-5, -2)
 
